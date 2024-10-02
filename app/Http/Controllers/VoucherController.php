@@ -83,6 +83,9 @@ class VoucherController extends Controller
     public function destroy(Voucher $voucher)
     {
         $voucher->delete();
-        return response(null, 204);
+        return response()->json([
+            'success' => true,
+            'message' => 'Product has been deleted successfully!'
+        ], 200);
     }
 }
